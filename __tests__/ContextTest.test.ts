@@ -11,6 +11,8 @@ import SampleComponent from './SampleComponent.svelte';
 import ContextTest from '$lib/ContextTest.svelte';
 
 test('renders a SampleComponent using ContextTest', () => {
-  const { getByText } = render(ContextTest, { props: { component: SampleComponent } });
+  const { getByText } = render(ContextTest, {
+    props: { component: SampleComponent }
+  });
   expect(getByText('sample')).toBeInTheDocument();
 });
