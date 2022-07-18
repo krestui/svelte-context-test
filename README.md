@@ -18,7 +18,6 @@ In case of yarn, do the following:
 $ yarn add -D @krestui/svelte-context-test
 ```
 
-
 ## Example
 
 Assume 2 components - Parent and Child, that share data between each other through `Context`s , as below.
@@ -77,7 +76,6 @@ test('renders the Child component', () => {
 To write better unit tests, we use this library `@krestui/svelte-context-test` as below.
 
 ## Usage
-
 
 Create a mixin helper component of `Child.svelte` as below, say `MockChild.svelte` that helps us set the context key attribute values, as below.
 
