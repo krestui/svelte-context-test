@@ -1,0 +1,57 @@
+{
+  "name": "@krestui/svelte-context-test",
+  "license": "MIT",
+  "repository": "git@github.com:krestui/svelte-context-test.git",
+  "version": "0.1.0",
+  "types": "package/index.d.ts",
+  "author": "KrestUI",
+  "keywords": [
+    "svelte",
+    "svelte-context",
+    "test",
+    "jest",
+    "unit"
+  ],
+  "scripts": {
+    "clean": "rimraf package && rimraf node_modules/@krestui",
+    "build": "svelte-kit package",
+    "package": "svelte-kit package",
+    "prepare": "yarn clean && NODE_ENV=production yarn package",
+    "test": "jest",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --check --plugin-search-dir=. . && eslint .",
+    "format": "prettier --write --plugin-search-dir=. .",
+    "test:watch": "npm run test -- --watch",
+    "next": "yarn version patch --deferred && yarn version apply",
+    "pub": "yarn check && yarn lint && yarn prepare && cd package && touch yarn.lock &&  yarn && yarn npm publish --tolerate-republish"
+  },
+  "devDependencies": {
+    "@sveltejs/kit": "^1.0.0-next.377",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/svelte": "3.1.3",
+    "@types/jest": "^28.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "jest": "^28.1.3",
+    "jest-environment-jsdom": "^28.1.3",
+    "prettier": "^2.7.1",
+    "prettier-plugin-svelte": "^2.7.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.77.0",
+    "svelte": "^3.49.0",
+    "svelte-check": "^2.8.0",
+    "svelte-jester": "^2.3.2",
+    "svelte-preprocess": "^4.10.7",
+    "svelte2tsx": "^0.5.11",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.7.4"
+  },
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  }
+}
